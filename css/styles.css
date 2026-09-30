@@ -81,11 +81,12 @@ p{margin:0}
 @keyframes blink{50%{opacity:0}}
 
 .preview{display:none; background:radial-gradient(ellipse at 30% 0%, #10225E 0%, #050F36 60%); position:relative; overflow:hidden}
+.pane.preview{padding:16px 6px 0}
 .editor[data-view="preview"] .preview{display:flex; justify-content:center; align-items:flex-end}
 .editor[data-view="preview"] .source{display:none}
 
 /* ---- Escena multi-dispositivo (Resultado del hero) ---- */
-.scene-frame{position:relative; width:100%; overflow:hidden; height:400px}
+.scene-frame{position:relative; width:560px; max-width:100%; margin:0 auto; overflow:hidden; height:400px}
 .scene{position:absolute; left:50%; bottom:0; width:560px; height:400px; transform:translateX(-50%); transform-origin:bottom center}
 @media (max-width:760px){ .scene-frame{height:368px} .scene{transform:translateX(-50%) scale(.92)} }
 @media (max-width:520px){ .scene-frame{height:288px} .scene{transform:translateX(-50%) scale(.72)} }
@@ -102,7 +103,7 @@ p{margin:0}
 .t-sub{height:4px; width:70%; border-radius:2px; background:#EEF1FB; margin-bottom:8px}
 .t-btn{display:inline-block; background:var(--navy); border-radius:5px; height:12px; width:38px}
 
-.laptop{position:absolute; left:90px; top:56px; z-index:2; width:380px; opacity:.001; transform:translateY(20px) scale(.96); transition:opacity .5s ease .15s, transform .5s cubic-bezier(.2,.8,.3,1.15) .15s}
+.laptop{position:absolute; left:72px; top:40px; z-index:2; width:432px; opacity:.001; transform:translateY(20px) scale(.96); transition:opacity .5s ease .15s, transform .5s cubic-bezier(.2,.8,.3,1.15) .15s}
 .editor[data-view="preview"].pop .laptop{opacity:1; transform:translateY(0) scale(1)}
 .laptop-shell{background:linear-gradient(180deg,#1B2456,#0B1440); border-radius:14px 14px 0 0; padding:10px 10px 0; box-shadow:0 40px 70px -20px rgba(0,0,0,.7); position:relative}
 .laptop-cam{position:absolute; left:50%; top:16px; transform:translateX(-50%); width:5px; height:5px; border-radius:50%; background:#020617; box-shadow:0 0 0 2px rgba(255,255,255,.06)}
