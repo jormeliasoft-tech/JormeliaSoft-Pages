@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face{font-family:'Outfit'; font-weight:300 800; src:url('outfit-variable.woff2') format('woff2')}
+  @font-face{font-family:'Figtree'; font-weight:400 600; src:url('figtree-variable.woff2') format('woff2')}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:640px;height:480px;background:transparent}
+  .stage{position:relative;width:640px;height:480px;font-family:'Figtree',sans-serif}
+
+  .blob{
+    position:absolute; width:520px; height:520px; right:-140px; top:-70px;
+    background:linear-gradient(135deg,#4CA1FD 0%,#1D4FE0 55%,#4B17B9 100%);
+    border-radius:42% 58% 55% 45% / 48% 40% 60% 52%;
+    opacity:.16;
+  }
+  .blob2{
+    position:absolute; width:260px; height:260px; right:60px; bottom:-60px;
+    background:linear-gradient(135deg,#4CA1FD,#1D4FE0);
+    border-radius:50% 50% 45% 55% / 55% 45% 55% 45%;
+    opacity:.10;
+  }
+
+  .card{
+    position:absolute; right:70px; top:60px; width:300px; height:360px;
+    background:#ffffff; border-radius:28px; transform:rotate(4deg);
+    box-shadow:0 40px 70px -30px rgba(29,79,224,.35), 0 0 0 1px rgba(29,79,224,.06);
+    padding:26px 24px;
+  }
+  .card .top{ display:flex; align-items:center; gap:10px; margin-bottom:22px; }
+  .card .dot{ width:10px; height:10px; border-radius:50%; background:#E3E9FB; }
+  .card .dot.on{ background:#1D4FE0; }
+  .row{ display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .thumb{ width:52px; height:52px; border-radius:14px; flex:none; }
+  .thumb.a{ background:linear-gradient(135deg,#DCEBFF,#BBD8FF); }
+  .thumb.b{ background:linear-gradient(135deg,#E7E0FF,#CFC0FF); }
+  .thumb.c{ background:linear-gradient(135deg,#DFF3EA,#BEE7D3); }
+  .lines{ flex:1; }
+  .line{ height:10px; border-radius:6px; background:#EEF1FB; margin-bottom:8px; }
+  .line.w60{ width:60%; }
+  .line.w40{ width:40%; background:#DCE2F5; }
+  .price{ font:700 15px 'Outfit',sans-serif; color:#1D4FE0; white-space:nowrap; }
+  .checkout{
+    margin-top:14px; height:52px; border-radius:16px;
+    background:linear-gradient(135deg,#4CA1FD,#1D4FE0);
+    display:flex; align-items:center; justify-content:center;
+    font:700 16px 'Outfit',sans-serif; color:#fff; letter-spacing:.01em;
+    box-shadow:0 18px 30px -14px rgba(29,79,224,.6);
+  }
+
+  .bag{
+    position:absolute; left:56px; bottom:56px; width:150px; height:150px;
+  }
+  .bag-body{
+    position:absolute; inset:34px 6px 6px 6px; background:#020C30; border-radius:22px;
+    box-shadow:0 30px 50px -22px rgba(2,12,48,.45);
+  }
+  .bag-handle{
+    position:absolute; left:38px; top:0; width:74px; height:74px;
+    border:14px solid #020C30; border-bottom:none; border-radius:44px 44px 0 0;
+  }
+  .bag-check{
+    position:absolute; left:50%; top:62%; width:46px; height:46px; transform:translate(-50%,-50%);
+    border-radius:50%; background:linear-gradient(135deg,#4CA1FD,#1D4FE0);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .bag-check svg{ width:24px; height:24px; }
+
+  .coin{
+    position:absolute; width:64px; height:64px; border-radius:50%;
+    background:#ffffff; box-shadow:0 18px 30px -14px rgba(29,79,224,.35), 0 0 0 1px rgba(29,79,224,.08);
+    display:flex; align-items:center; justify-content:center;
+    font:800 22px 'Outfit',sans-serif; color:#1D4FE0;
+  }
+  .coin.c1{ right:36px; top:20px; }
+  .coin.c2{ left:210px; bottom:170px; width:44px; height:44px; font-size:16px; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="blob"></div>
+    <div class="blob2"></div>
+
+    <div class="coin c1">%</div>
+    <div class="coin c2">$</div>
+
+    <div class="bag">
+      <div class="bag-handle"></div>
+      <div class="bag-body"></div>
+      <div class="bag-check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="top"><span class="dot on"></span><span class="dot"></span><span class="dot"></span></div>
+      <div class="row">
+        <div class="thumb a"></div>
+        <div class="lines"><div class="line w60"></div><div class="line w40"></div></div>
+        <div class="price">$45k</div>
+      </div>
+      <div class="row">
+        <div class="thumb b"></div>
+        <div class="lines"><div class="line w60"></div><div class="line w40"></div></div>
+        <div class="price">$32k</div>
+      </div>
+      <div class="row">
+        <div class="thumb c"></div>
+        <div class="lines"><div class="line w60"></div><div class="line w40"></div></div>
+        <div class="price">$68k</div>
+      </div>
+      <div class="checkout">Pagar ahora</div>
+    </div>
+  </div>
+</body>
+</html>
