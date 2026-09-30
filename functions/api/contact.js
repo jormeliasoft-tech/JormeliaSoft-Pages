@@ -21,7 +21,8 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: 'Nombre y mensaje son obligatorios.' }, 400);
   }
 
-  if (!env.RESEND_API_KEY) {
+  const apiKey = String(env.RESEND_API_KEY || '').trim();
+  if (!apiKey) {
     return json({ ok: false, error: 'El envío de correo no está configurado todavía.' }, 500);
   }
 
@@ -32,22 +33,30 @@ export async function onRequestPost(context) {
     <p><strong>Mensaje:</strong><br>${escapeHtml(mensaje).replace(/\n/g, '<br>')}</p>
   `;
 
-  const resendRes = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${env.RESEND_API_KEY}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from: 'Jormelia Soft <formulario@jormeliasoft.com>',
-      to: ['hola@jormeliasoft.com'],
-      reply_to: correo || undefined,
-      subject: `Nueva cotización de ${nombre}`,
-      html,
-    }),
-  });
+  let resendRes;
+  try {
+    resendRes = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'Jormelia Soft <formulario@jormeliasoft.com>',
+        to: ['hola@jormeliasoft.com'],
+        reply_to: correo || undefined,
+        subject: `Nueva cotización de ${nombre}`,
+        html,
+      }),
+    });
+  } catch (e) {
+    console.error('Resend fetch failed:', e.message);
+    return json({ ok: false, error: 'No pudimos conectar con el servicio de correo. Intenta por WhatsApp.' }, 502);
+  }
 
   if (!resendRes.ok) {
+    const errText = await resendRes.text().catch(() => '');
+    console.error('Resend API error:', resendRes.status, errText);
     return json({ ok: false, error: 'No pudimos enviar el mensaje. Intenta por WhatsApp.' }, 502);
   }
 
