@@ -24,7 +24,7 @@
 
 <link rel="preload" href="assets/fonts/outfit-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/figtree-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/styles.css?v=4">
+<link rel="stylesheet" href="css/styles.css?v=6">
 <link rel="icon" href="assets/img/logo-simbolo.webp">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
@@ -89,9 +89,10 @@
         <li><a href="#por-que">Por qué nosotros</a></li>
         <li><a href="#portafolio">Portafolio</a></li>
         <li><a href="#preguntas">Preguntas</a></li>
+        <li class="menu-cta-item"><a href="#cotizador" class="menu-cta">Cotizar proyecto</a></li>
       </ul>
     </nav>
-    <a class="btn btn-primary" href="#contacto">Cotizar proyecto</a>
+    <a class="btn btn-primary" href="#cotizador">Cotizar proyecto</a>
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
     </button>
@@ -463,6 +464,26 @@
 
 <a class="float-wa" href="https://wa.me/573005772967?text=Hola%20Jormelia%20Soft%2C%20quiero%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg><use href="#i-wa"/></svg></a>
 
-<script src="js/main.js?v=2"></script>
+<div class="quote-modal" id="quoteModal" aria-hidden="true">
+  <div class="quote-backdrop" id="quoteBackdrop"></div>
+  <div class="quote-dialog" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+    <button class="quote-close" id="quoteClose" type="button" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="quote-blob" aria-hidden="true"></div>
+    <div class="quote-blob-2" aria-hidden="true"></div>
+    <div class="quote-dialog-scroll">
+      <span class="eyebrow-dot"><span class="dot-live"></span>Cotizador en línea</span>
+      <h2 id="quoteTitle">Cotiza tu proyecto en 30 segundos</h2>
+      <p class="quote-sub">Elige lo que necesitas y mira un rango de precio real, alineado al mercado colombiano actual. Es un estimado inicial — el valor final se confirma después de conocer tu proyecto, sin costo ni compromiso.</p>
+      <span class="step-label">Paso 1 · ¿Qué necesitas?</span>
+      <div class="quote-svc-grid" id="qSvcGrid"></div>
+      <div class="quote-questions" id="qQuestions"></div>
+      <div id="qResult"></div>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js?v=3"></script>
 </body>
 </html>
