@@ -7,20 +7,22 @@
 
   // Hero: code -> result
   var src=[
-    ['k','const '],['','negocio = '],['f','crearSitio'],['','({\n'],
-    ['','  nombre: '],['s','"Hilos Nata"'],['',',\n'],
-    ['','  pedidos: '],['s','"WhatsApp"'],['',',\n'],
-    ['','  catalogo: '],['s','"hecho a mano"'],['',',\n'],
-    ['','  bajoPedido: '],['p','true'],['',',\n'],
-    ['','  movil: '],['p','true'],['',',\n'],['','});\n\n'],
-    ['','negocio.'],['f','publicar'],['','(); '],['c','// listo']
+    ['k','const '],['','sitio = '],['f','crearSitio'],['','({\n'],
+    ['','  diseño: '],['s','"100% responsive"'],['',',\n'],
+    ['','  dispositivos: ['],['s','"celular"'],['',', '],['s','"tablet"'],['',', '],['s','"laptop"'],['','],\n'],
+    ['','  unaVezPorTodas: '],['p','true'],['',',\n'],['','});\n\n'],
+    ['','sitio.'],['f','publicar'],['','(); '],['c','// listo']
   ];
   var code=document.getElementById('code'), ed=document.getElementById('editor'),
-      tC=document.getElementById('tabCode'), tP=document.getElementById('tabPrev');
+      tC=document.getElementById('tabCode'), tP=document.getElementById('tabPrev'), popTimer;
   function esc(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
   function render(n){var h='',left=n;for(var i=0;i<src.length&&left>0;i++){var t=src[i][1].slice(0,left);left-=t.length;h+=src[i][0]?'<span class="'+src[i][0]+'">'+esc(t)+'</span>':esc(t)}return h}
   var total=src.reduce(function(a,s){return a+s[1].length},0), timer;
-  function show(v){ed.dataset.view=v;tC.setAttribute('aria-selected',v==='code');tP.setAttribute('aria-selected',v==='preview')}
+  function show(v){
+    ed.dataset.view=v; tC.setAttribute('aria-selected',v==='code'); tP.setAttribute('aria-selected',v==='preview');
+    clearTimeout(popTimer); ed.classList.remove('pop');
+    if(v==='preview'){ popTimer=setTimeout(function(){ ed.classList.add('pop') },20) }
+  }
   tC.onclick=function(){clearTimeout(timer);code.innerHTML=render(total)+'<span class="caret"></span>';show('code')};
   tP.onclick=function(){clearTimeout(timer);code.innerHTML=render(total);show('preview')};
   if(matchMedia('(prefers-reduced-motion: reduce)').matches){code.innerHTML=render(total);return}

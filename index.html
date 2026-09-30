@@ -24,7 +24,7 @@
 
 <link rel="preload" href="assets/fonts/outfit-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/figtree-variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/styles.css?v=6">
+<link rel="stylesheet" href="css/styles.css?v=7">
 <link rel="icon" href="assets/img/logo-simbolo.webp">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/img/icons/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/icons/favicon-32x32.png">
@@ -124,34 +124,75 @@
           </div>
           <div class="pane source"><pre class="code" id="code" aria-label="Código de ejemplo"></pre></div>
           <div class="pane preview">
-            <div class="phone" role="img" aria-label="Vista móvil de Hilos Nata, tienda de crochet hecho a mano con pedidos por WhatsApp">
-              <div class="phone-status" aria-hidden="true">
-                <span>9:41</span>
-                <span class="phone-status-icons">
-                  <svg viewBox="0 0 20 12" fill="currentColor"><rect x="0" y="7" width="3" height="5" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M2 8.5a15 15 0 0 1 20 0"/><path d="M5.5 12.5a10 10 0 0 1 13 0"/><path d="M9 16.5a5 5 0 0 1 6 0"/><circle cx="12" cy="20" r="1" fill="currentColor" stroke="none"/></svg>
-                  <svg viewBox="0 0 26 14" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="1" width="21" height="12" rx="3"/><rect x="23.2" y="4.5" width="1.8" height="5" rx=".8" fill="currentColor" stroke="none"/><rect x="3" y="3" width="16" height="8" rx="1.5" fill="currentColor" stroke="none"/></svg>
-                </span>
-              </div>
-              <div class="phone-head">
-                <span class="phone-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M6 9c3 1.5 9 1.5 12 0M6 15c3-1.5 9-1.5 12 0M9 6c1.5 3 1.5 9 0 12M15 6c-1.5 3-1.5 9 0 12"/></svg></span>
-                <div>
-                  <h4>Hilos Nata<svg class="verified" viewBox="0 0 24 24" aria-label="Cuenta verificada"><circle cx="12" cy="12" r="10" fill="#1D4FE0"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg></h4>
-                  <small>Tejido a mano · bajo pedido</small>
+            <div class="scene-frame">
+            <div class="scene" role="img" aria-label="El mismo sitio funcionando en tablet, laptop y celular">
+              <div class="tablet" aria-hidden="true">
+                <div class="tablet-body">
+                  <div class="tablet-screen">
+                    <div class="t-nav"><span class="t-logo"></span><span class="t-line" style="width:30px"></span></div>
+                    <div class="t-hero">Convierte visitas en clientes.</div>
+                    <div class="t-sub"></div>
+                    <span class="t-btn"></span>
+                  </div>
                 </div>
               </div>
-              <div class="phone-tabs">
-                <span class="ptab active">Sacos</span>
-                <span class="ptab">Gorros</span>
-                <span class="ptab">Bufandas</span>
+
+              <div class="laptop" aria-hidden="true">
+                <div class="laptop-shell">
+                  <div class="laptop-cam"></div>
+                  <div class="browser">
+                    <div class="browser-bar">
+                      <span class="b-dot"></span><span class="b-dot"></span><span class="b-dot"></span>
+                      <div class="b-url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>tunegocio.com</div>
+                    </div>
+                    <div class="l-screen">
+                      <div class="l-nav">
+                        <span class="l-logo"></span><span class="l-brand">TuNegocio</span>
+                        <div class="l-links"><span></span><span></span><span></span></div>
+                        <span class="l-cta">Cotizar</span>
+                      </div>
+                      <div class="l-hero">
+                        <div class="l-hero-text">
+                          <span class="l-eyebrow"><i></i>Disponible ahora</span>
+                          <div class="l-h1">Convierte visitas<br>en clientes.</div>
+                          <div class="l-sub w1"></div>
+                          <div class="l-sub w2"></div>
+                          <div class="l-btns"><span class="l-btn-a">Empezar</span><span class="l-btn-b">Ver más</span></div>
+                        </div>
+                        <div class="l-visual">
+                          <div class="l-card c1"><div class="stat">+40%</div><div class="lab">Conversión</div></div>
+                          <div class="l-card c2"><div class="dot"></div></div>
+                        </div>
+                      </div>
+                      <div class="l-peek"><div class="card"></div><div class="card"></div><div class="card"></div></div>
+                    </div>
+                  </div>
+                  <div class="laptop-base"></div>
+                </div>
               </div>
-              <div class="phone-list">
-                <div class="prod"><span class="prod-swatch sw-a"></span><span class="prod-name">Saco tejido a mano</span><svg class="prod-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></div>
-                <div class="prod"><span class="prod-swatch sw-b"></span><span class="prod-name">Gorro de lana</span><svg class="prod-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></div>
-                <div class="prod"><span class="prod-swatch sw-c"></span><span class="prod-name">Bufanda a la medida</span><svg class="prod-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></div>
+
+              <div class="m-phone" aria-hidden="true">
+                <div class="phone-shell">
+                  <div class="phone-notch"></div>
+                  <div class="p-screen">
+                    <div class="p-status"><span>9:41</span><span>100%</span></div>
+                    <div class="p-nav">
+                      <span class="p-logo"></span>
+                      <div class="p-burger"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="p-body">
+                      <span class="p-eyebrow">Disponible ahora</span>
+                      <div class="p-h1">Convierte visitas en clientes.</div>
+                      <div class="p-sub w1"></div>
+                      <div class="p-sub w2"></div>
+                      <div class="p-btn">Empezar</div>
+                      <div class="p-cardrow"><div class="p-mini"></div><div class="p-mini"></div></div>
+                    </div>
+                    <div class="home-ind"></div>
+                  </div>
+                </div>
               </div>
-              <div class="wa"><svg width="16" height="16"><use href="#i-wa"/></svg>Pedir por WhatsApp</div>
-              <div class="phone-home" aria-hidden="true"></div>
+            </div>
             </div>
           </div>
           <div class="ok"><svg width="14" height="14"><use href="#i-check"/></svg>Publicado</div>
@@ -484,6 +525,6 @@
   </div>
 </div>
 
-<script src="js/main.js?v=3"></script>
+<script src="js/main.js?v=4"></script>
 </body>
 </html>
