@@ -8,7 +8,7 @@
   // Hero: code -> result
   var src=[
     ['k','const '],['','negocio = '],['f','crearSitio'],['','({\n'],
-    ['','  nombre: '],['s','"Hilos Ñata"'],['',',\n'],
+    ['','  nombre: '],['s','"Hilos Nata"'],['',',\n'],
     ['','  pedidos: '],['s','"WhatsApp"'],['',',\n'],
     ['','  catalogo: '],['s','"hecho a mano"'],['',',\n'],
     ['','  bajoPedido: '],['p','true'],['',',\n'],
