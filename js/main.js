@@ -8,9 +8,10 @@
   // Hero: code -> result
   var src=[
     ['k','const '],['','negocio = '],['f','crearSitio'],['','({\n'],
-    ['','  nombre: '],['s','"Panadería La Espiga"'],['',',\n'],
+    ['','  nombre: '],['s','"Hilos Ñata"'],['',',\n'],
     ['','  pedidos: '],['s','"WhatsApp"'],['',',\n'],
-    ['','  pagos: ['],['s','"Nequi"'],['',', '],['s','"PSE"'],['',', '],['s','"Tarjeta"'],['','],\n'],
+    ['','  catalogo: '],['s','"hecho a mano"'],['',',\n'],
+    ['','  bajoPedido: '],['p','true'],['',',\n'],
     ['','  movil: '],['p','true'],['',',\n'],['','});\n\n'],
     ['','negocio.'],['f','publicar'],['','(); '],['c','// listo']
   ];

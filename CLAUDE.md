@@ -36,7 +36,7 @@ jormelia-soft/
 
 ### Secciones (en orden)
 1. **Nav fija**: símbolo + "Jormelia Soft" en texto, enlaces a secciones, botón "Cotizar proyecto". Menú hamburguesa bajo 760px.
-2. **Hero**: titular "Convertimos tu idea en software que trabaja por tu negocio." A la derecha, el elemento memorable del sitio: una ventana de editor que escribe código (`crearSitio({...})`) y luego cambia a la pestaña "Resultado", mostrando una tienda móvil de ejemplo (Panadería La Espiga, pagos Nequi/PSE/Tarjeta, botón de WhatsApp). Las pestañas son clicables.
+2. **Hero**: titular "Convertimos tu idea en software que trabaja por tu negocio." A la derecha, el elemento memorable del sitio: una ventana de editor que escribe código (`crearSitio({...})`) y luego cambia a la pestaña "Resultado", mostrando una tienda móvil de **Hilos Ñata** (proyecto real, ver Portafolio) con pedidos por WhatsApp. Las pestañas son clicables. Los productos mostrados ("Saco tejido a mano", "Gorro de lana", "Bufanda a la medida") son genéricos e ilustrativos a propósito — **no** son nombres ni precios reales de su catálogo (decisión del cliente, 2026-09-29, para no atribuirle datos inventados a un negocio real). Si se agregan precios o nombres de producto reales en el futuro, deben venir confirmados por Hilos Ñata, no inventados.
 3. **Franja de marca**: "Imagina · Crea · Conecta" sobre azul marino.
 4. **Servicios** (`#servicios`): grilla asimétrica. Destacado: Páginas web. Luego tiendas en línea, apps móviles, software a la medida, automatización, soporte y mantenimiento.
 5. **Cómo trabajamos** (`#proceso`): las 3 palabras del lema como pasos reales (1 Imagina, 2 Crea, 3 Conecta).
@@ -79,7 +79,7 @@ Colores (extraídos del logo), definidos como variables en `:root`:
 Estos contenidos se escribieron sin acceso al catálogo real ni al Instagram:
 - [ ] **Servicios**: confirmar la lista contra el catálogo de WhatsApp y ajustar textos y etiquetas. (Confirmado 2026-09-29: la lista de 6 servicios se mantiene tal cual; no incluir videojuegos como servicio aparte, solo mencionarlos si aplica en conversación directa con el cliente).
 - [x] **Tecnologías** (sección Por qué): actualizado 2026-09-29 a stack real y más competitivo: TypeScript, JavaScript, React, Node.js, Java, C#, C++, Python, Laravel, Django, Flutter, SQL, Figma. Se quitó HTML·CSS y WordPress por decisión del cliente (no aportan a un posicionamiento premium). Si el stack real cambia, actualizar los `<span>` dentro de `.stack` en `index.html`.
-- [ ] **Ejemplo del hero**: "Panadería La Espiga" es ficticio. Reemplazar por un proyecto real si hay permiso del cliente (por ejemplo, Hilos Ñata o SIGAP, ya usados en el portafolio).
+- [x] **Ejemplo del hero**: resuelto 2026-09-29, ahora muestra Hilos Ñata (real) en vez de la panadería ficticia. Productos genéricos, sin precios/nombres reales inventados (ver Secciones).
 - [x] **Portafolio** (`#portafolio`): resuelto 2026-09-29 con Hilos Ñata y SIGAP (ver Secciones). Si aparece un tercer proyecto real con permiso, agregarlo siguiendo el mismo patrón de tarjeta (`.case`) — no hace falta que sean exactamente 2; el grid `.cases` es `repeat(2,1fr)` pero acepta más elementos (ajustar a `repeat(3,1fr)` si llegan a ser 3 o más, como estaba antes).
 - [ ] **FAQ**: revisar tiempos y condiciones (periodo de acompañamiento, trabajo remoto) según la política real.
 - [ ] Ciudad/ubicación en el footer (hoy dice "Colombia").
