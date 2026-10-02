@@ -171,20 +171,25 @@ p{margin:0}
 .bw-item{display:inline-flex; align-items:center; gap:clamp(18px,4vw,56px)}
 .bw-item:not(:last-child)::after{content:""; width:10px; height:10px; border-radius:50%; background:var(--soft)}
 .bw-stack{position:relative; display:flex; flex-direction:column; align-items:center; gap:.16em}
-.bw-icon{height:.56em; display:flex; align-items:center; justify-content:center}
-.bw-icon svg{width:.56em; height:.56em; color:#fff}
+.bw-icon{position:relative; height:.56em; display:flex; align-items:center; justify-content:center}
+.bw-icon::before{content:""; position:absolute; inset:-70%; border-radius:50%; background:radial-gradient(circle, rgba(76,161,253,.6), rgba(76,161,253,0) 68%); filter:blur(5px); opacity:0; z-index:-1}
+.bw-icon svg{width:.56em; height:.56em; color:#fff; stroke-width:1.6; filter:drop-shadow(0 2px 3px rgba(2,12,48,.45))}
 .bw-text{display:inline-block}
 .band p{color:#AEB8DC; max-width:36ch; font-size:.98rem}
 
 /* Imagina/Crea/Conecta: el ícono aparece grande y solo (protagonista), luego se encoge
    y sube a quedar pequeño sobre la palabra, que aparece a su tamaño normal. Una vez, en vista. */
 .band.in-view .bw-icon{animation:bwIcon 1.2s cubic-bezier(.22,.8,.3,1) both}
+.band.in-view .bw-icon::before{animation:bwGlow 1.2s ease both}
 .band.in-view .bw-text{animation:bwText 1.2s ease both}
 .band.in-view .band-words > .bw-item:nth-child(1) .bw-icon,
+.band.in-view .band-words > .bw-item:nth-child(1) .bw-icon::before,
 .band.in-view .band-words > .bw-item:nth-child(1) .bw-text{animation-delay:.1s}
 .band.in-view .band-words > .bw-item:nth-child(2) .bw-icon,
+.band.in-view .band-words > .bw-item:nth-child(2) .bw-icon::before,
 .band.in-view .band-words > .bw-item:nth-child(2) .bw-text{animation-delay:1.3s}
 .band.in-view .band-words > .bw-item:nth-child(3) .bw-icon,
+.band.in-view .band-words > .bw-item:nth-child(3) .bw-icon::before,
 .band.in-view .band-words > .bw-item:nth-child(3) .bw-text{animation-delay:2.5s}
 @keyframes bwIcon{
   0%{opacity:0; transform:translateY(.65em) scale(2.6)}
@@ -192,12 +197,19 @@ p{margin:0}
   55%{opacity:1; transform:translateY(.65em) scale(2.6)}
   88%,100%{opacity:1; transform:translateY(0) scale(1)}
 }
+@keyframes bwGlow{
+  0%,12%{opacity:0}
+  28%{opacity:1}
+  55%{opacity:1}
+  88%,100%{opacity:0}
+}
 @keyframes bwText{
   0%,78%{opacity:0; transform:scale(.85)}
   96%,100%{opacity:1; transform:scale(1)}
 }
 @media (prefers-reduced-motion: reduce){
-  .band.in-view .bw-icon, .band.in-view .bw-text{animation:none!important}
+  .band.in-view .bw-icon, .band.in-view .bw-icon::before, .band.in-view .bw-text{animation:none!important}
+  .bw-icon::before{opacity:0!important}
 }
 
 /* ---------- Sections ---------- */
