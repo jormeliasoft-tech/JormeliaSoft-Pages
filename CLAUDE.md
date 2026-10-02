@@ -114,7 +114,13 @@ Auditoría de competitividad hecha el 2026-09-29 (7 puntos para competir con age
 
 **Se evaluó migrar a React y se descartó** (2026-09-29): ninguno de los 7 puntos lo requería, el sitio es una sola página sin estado complejo, y un framework solo agregaría build/dependencias sin beneficio. Si en el futuro se agrega un blog, panel de cliente o portafolio dinámico tipo CMS, ahí sí vale la pena reconsiderar (y evaluar algo más liviano que React puro, como Astro, antes que un SPA completo).
 
-**Opcional / más adelante**: testimonios reales con nombre y negocio autorizados, selector manual de tema claro/oscuro, páginas individuales por servicio, blog, versión en inglés, decidir si `gestionsigasoftware-netizen` sigue siendo la cuenta de GitHub del proyecto a largo plazo.
+**Opcional / más adelante**: selector manual de tema claro/oscuro, páginas individuales por servicio, blog, versión en inglés, decidir si `gestionsigasoftware-netizen` sigue siendo la cuenta de GitHub del proyecto a largo plazo.
+
+**Pendiente — sección de testimonios / prueba social (2026-10-02)**: el cliente pidió algo tipo widget de Trustpilot "bien realista, con buena valoración" más una sección de testimonios, mientras la empresa crece. Se rechazó hacerlo con contenido inventado (va directo contra el principio ya establecido de "nada de estadísticas, clientes o testimonios inventados" y además imitar la marca de Trustpilot sin cuenta real sería engañoso). Queda pendiente hacerlo bien, con pasos reales:
+1. Crear la cuenta real de la empresa en Trustpilot (gratis), igual que se hizo con Google Business Profile.
+2. Pedir una reseña corta autorizada a Hilos Nata y/o SIGAP (nombre y negocio reales, con permiso).
+3. Una vez haya 2-3 reseñas reales, integrar el widget oficial de Trustpilot (script embebido legítimo) y maquetar una sección de testimonios con esas citas reales.
+Mientras tanto, no agregar nada en su lugar (ni placeholder falso ni estadísticas inventadas) — dejar la sección fuera del sitio hasta tener contenido real que poner ahí.
 
 ## Cómo trabajar
 - No hay dependencias ni build para el sitio en sí. Editar y recargar. La única pieza "de servidor" es `functions/api/contact.js`, una Cloudflare Pages Function (JS plano, sin compilar) que Cloudflare ejecuta automáticamente al desplegar — no requiere Node/npm localmente para editarla, solo para probarla end-to-end se necesitaría `wrangler pages dev`.
