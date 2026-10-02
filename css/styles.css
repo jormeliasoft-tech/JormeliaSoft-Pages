@@ -62,7 +62,7 @@ p{margin:0}
 .hero .lead{font-size:1.2rem; color:var(--ink-2); margin-top:24px; max-width:48ch}
 .hero .actions{display:flex; flex-wrap:wrap; gap:14px; margin-top:36px}
 .hero .note{margin-top:28px; font-size:.92rem; color:var(--ink-2); display:flex; align-items:center; gap:10px}
-.dot-live{width:9px; height:9px; border-radius:50%; background:#22C55E; box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+.dot-live{width:9px; height:9px; border-radius:50%; background:var(--azure); box-shadow:0 0 0 4px color-mix(in srgb, var(--azure) 22%, transparent)}
 
 .stage{position:relative; min-width:0}
 .hero .wrap > *{min-width:0}
