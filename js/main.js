@@ -29,6 +29,18 @@
   var n=0;(function type(){n+=2;code.innerHTML=render(n)+'<span class="caret"></span>';if(n<total){timer=setTimeout(type,26)}else{timer=setTimeout(function(){show('preview')},900)}})();
 })();
 
+// Franja "Imagina · Crea · Conecta": animar los íconos una sola vez al entrar en vista
+(function(){
+  var band=document.querySelector('.band');
+  if(!band || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ band.classList.add('in-view'); io.disconnect() }
+    });
+  },{threshold:.5});
+  io.observe(band);
+})();
+
 // Analítica: no-op seguro si no hay GA4 configurado (ver bloque comentado en el <head>)
 function trackEvent(name, params){ if (typeof gtag === 'function') gtag('event', name, params || {}) }
 document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function(a){

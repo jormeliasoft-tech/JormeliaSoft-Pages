@@ -167,10 +167,36 @@ p{margin:0}
 /* ---------- Tagline band ---------- */
 .band{background:var(--navy); color:#fff; overflow:hidden}
 .band .wrap{display:flex; align-items:center; justify-content:space-between; gap:24px; padding-block:30px; flex-wrap:wrap}
-.band-words{display:flex; gap:clamp(18px,4vw,56px); font-family:var(--display); font-size:clamp(1.6rem,3.6vw,2.6rem); font-weight:300; letter-spacing:.01em}
-.band-words span{display:flex; align-items:center; gap:clamp(18px,4vw,56px)}
-.band-words span:not(:last-child)::after{content:""; width:10px; height:10px; border-radius:50%; background:var(--soft)}
+.band-words{display:flex; align-items:center; gap:clamp(18px,4vw,56px); font-family:var(--display); font-size:clamp(1.6rem,3.6vw,2.6rem); font-weight:300; letter-spacing:.01em}
+.bw-item{position:relative; display:inline-flex; align-items:center; justify-content:center; gap:clamp(18px,4vw,56px)}
+.bw-item:not(:last-child)::after{content:""; width:10px; height:10px; border-radius:50%; background:var(--soft)}
+.bw-icon{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; opacity:0; pointer-events:none}
+.bw-icon svg{width:.85em; height:.85em; color:var(--azure)}
+.bw-text{display:inline-block}
 .band p{color:#AEB8DC; max-width:36ch; font-size:.98rem}
+
+/* Imagina/Crea/Conecta: el ícono de cada palabra se funde en la palabra, una a la vez, al entrar en vista */
+.band.in-view .bw-icon{animation:bwIcon 1s ease both}
+.band.in-view .bw-text{animation:bwText 1s ease both}
+.band.in-view .band-words > .bw-item:nth-child(1) .bw-icon,
+.band.in-view .band-words > .bw-item:nth-child(1) .bw-text{animation-delay:.1s}
+.band.in-view .band-words > .bw-item:nth-child(2) .bw-icon,
+.band.in-view .band-words > .bw-item:nth-child(2) .bw-text{animation-delay:1.1s}
+.band.in-view .band-words > .bw-item:nth-child(3) .bw-icon,
+.band.in-view .band-words > .bw-item:nth-child(3) .bw-text{animation-delay:2.1s}
+@keyframes bwIcon{
+  0%{opacity:0; transform:scale(.5)}
+  15%{opacity:1; transform:scale(1)}
+  55%{opacity:1; transform:scale(1)}
+  75%,100%{opacity:0; transform:scale(1.35)}
+}
+@keyframes bwText{
+  0%,55%{opacity:0; transform:scale(.6)}
+  75%,100%{opacity:1; transform:scale(1)}
+}
+@media (prefers-reduced-motion: reduce){
+  .band.in-view .bw-icon, .band.in-view .bw-text{animation:none!important}
+}
 
 /* ---------- Sections ---------- */
 section.block{padding:112px 0}
