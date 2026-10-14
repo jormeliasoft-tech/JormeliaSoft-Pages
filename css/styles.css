@@ -369,7 +369,7 @@ section.block{padding:112px 0}
 .tech-azure{background:color-mix(in srgb, var(--azure) 45%, #fff)}
 
 /* Portfolio */
-.cases{display:grid; grid-template-columns:repeat(2,1fr); gap:24px}
+.cases{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
 .case{background:var(--surface); border:1px solid var(--line); border-radius:24px; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 20px 44px -32px rgba(2,12,48,.35); transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease}
 .case:hover{transform:translateY(-4px); box-shadow:0 28px 52px -30px rgba(2,12,48,.4); border-color:var(--soft)}
 .case-shot{display:block; aspect-ratio:900/560; overflow:hidden; background:var(--tint)}
@@ -459,6 +459,7 @@ footer a:hover{color:#fff}
   footer .wrap{grid-template-columns:1fr 1fr}
   footer .wrap > :first-child{grid-column:1/-1}
   .legal{padding-right:0}
+  .cases{grid-template-columns:1fr 1fr}
 }
 @media (max-width:760px){
   .nav ul, .nav .btn{display:none}
